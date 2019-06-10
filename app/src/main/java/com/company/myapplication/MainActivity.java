@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Button MinBtn = (Button) findViewById(R.id.Minus);
         Button MulBtn = (Button) findViewById(R.id.multiply);
         Button DivBtn = (Button) findViewById(R.id.divide);
+        number_1.setText(0 + "");
+        number_2.setText(0 + "");
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 Integer b = Integer.parseInt(number_2.getText().toString());
                 int c = a + b;
                 result.setText(c + "");
+                number_1.setText(0 + "");
+                number_2.setText(0 + "");
             }
         });
         MinBtn.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 Integer b = Integer.parseInt(number_2.getText().toString());
                 int c = a - b;
                 result.setText(c +"");
+                number_1.setText(0 + "");
+                number_2.setText(0 + "");
             }
         });
         MulBtn.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 double f = Double.parseDouble(number_2.getText().toString());
                 double c = e * f;
                 result.setText(c + "");
+                number_1.setText(0 + "");
+                number_2.setText(0 + "");
             }
         });
         DivBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 double f = Double.parseDouble(number_2.getText().toString());
                 double c = e/f;
                 result.setText(c + "");
+                number_1.setText(0 + "");
+                number_2.setText(0 + "");
             }
         });
         Button old_result = findViewById(R.id.oldanswer);
