@@ -7,64 +7,301 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.lang.Math;
 
 public class MainActivity extends AppCompatActivity {
-
+    int caculated = 0;
+    int caculated_1 = 0;
+    int resets = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final TextView caculated_mini = (TextView) findViewById(R.id.caculated);
         final EditText number_1 = (EditText) findViewById(R.id.num_1);
         final EditText number_2 = (EditText) findViewById(R.id.num_2);
         final TextView result = (TextView) findViewById(R.id.result);
-        Button addBtn = (Button) findViewById(R.id.add);
-        Button MinBtn = (Button) findViewById(R.id.Minus);
+        final Button addBtn = (Button) findViewById(R.id.add);
+        Button clear = (Button) findViewById(R.id.Clear);
+                Button MinBtn = (Button) findViewById(R.id.Minus);
         Button MulBtn = (Button) findViewById(R.id.multiply);
         Button DivBtn = (Button) findViewById(R.id.divide);
-        number_1.setText(0 + "");
-        number_2.setText(0 + "");
+        //Gotta merge Sin, Cos, Tan button in one function :/
+        //System.out.println(caculated + "" + caculated_1);
+        Button Sine_law = findViewById(R.id.Sine);
+        Sine_law.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                        final Double e = Double.parseDouble(number_1.getText().toString());
+                        number_1.setText(Math.sin(Math.toRadians(e)) + "");
+                        caculated_1 = caculated_1 + 1;
+                    } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.sin(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated_1 == 0) {
+                        final Double f = Double.parseDouble(number_2.getText().toString());
+                        number_2.setText(Math.sin(Math.toRadians(f)) + "");
+                        caculated = caculated + 1;
+                    } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.sin(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+            }
+        });
+        Button Cosine_law = findViewById(R.id.cosine);
+        Cosine_law.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public final void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.cos(Math.toRadians(e)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.cos(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if(caculated_1 == 0){
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.cos(Math.toRadians(f)) + "");
+                            caculated = caculated + 1;
+
+                    } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.cos(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+                }
+        });
+        Button Tan_Law = (Button) findViewById(R.id.tane);
+        Tan_Law.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.tan(Math.toRadians(e)) + "");
+                            caculated_1 = caculated_1 + 1;
+
+                    } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.tan(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if(caculated_1 == 0){
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.tan(Math.toRadians(f)) + "");
+                            caculated = caculated + 1;
+
+                    } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.tan(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+            }
+        });
+        Button Asin = (Button) findViewById(R.id.asin);
+        Asin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.asin(Math.toRadians(e)) + "");
+                            caculated_1 = caculated_1 + 1;
+                    } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.asin(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if(caculated_1 == 0){
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.asin(Math.toRadians(f)) + "");
+                            caculated = caculated + 1;
+
+                    } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.asin(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+            }
+        });
+        Button Acos = (Button) findViewById(R.id.acos);
+        Acos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.acos(Math.toRadians(e)) + "");
+                            caculated_1 = caculated_1 + 1;
+
+                    } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.acos(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if(caculated_1 == 0){
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.acos(Math.toRadians(f)) + "");
+                            caculated = caculated + 1;
+
+                    } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.acos(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+            }
+        });
+        Button Atan = (Button) findViewById(R.id.atan);
+        Atan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (number_1.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                    if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.atan(Math.toRadians(e)) + "");
+                            caculated_1 = caculated_1 + 1;
+
+                    } else {
+                        if (caculated == 0) {
+                            final Double e = Double.parseDouble(number_1.getText().toString());
+                            number_1.setText(Math.atan(Math.toRadians(e)) + "");
+                            caculated = caculated + 1;
+                        }
+                    }
+                }
+                if (number_2.getText().length() == 0) {
+                    result.setText(0 + "");
+                } else {
+                        if(caculated_1 == 0){
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.atan(Math.toRadians(f)) + "");
+                            caculated = caculated + 1;
+                        } else {
+                        if (caculated_1 == 0) {
+                            final Double f = Double.parseDouble(number_2.getText().toString());
+                            number_2.setText(Math.atan(Math.toRadians(f)) + "");
+                            caculated_1 = caculated_1 + 1;
+                        }
+                    }
+                }
+            }
+        });
+        Button Reset = findViewById(R.id.Reset_2);
+        Reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(caculated_1 == 1) {
+                        caculated = 1;
+                        caculated_1 = 0;
+                        caculated_mini.setText("Trigonometry of Number 2");
+                    } else {
+                        caculated_1 = 1;
+                        caculated = 0;
+                        caculated_mini.setText("Trigonometry of Number 1");
+                    }
+            }
+        });
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer a = Integer.parseInt(number_1.getText().toString());
-                Integer b = Integer.parseInt(number_2.getText().toString());
-                int c = a + b;
+                double e = number_1.getText().length() == 0 ? 0 : Double.parseDouble(number_1.getText().toString());
+                double f = number_2.getText().length() == 0 ? 0 : Double.parseDouble(number_2.getText().toString());
+                double c = e + f;
                 result.setText(c + "");
-                number_1.setText(0 + "");
-                number_2.setText(0 + "");
             }
         });
         MinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer a = Integer.parseInt(number_1.getText().toString());
-                Integer b = Integer.parseInt(number_2.getText().toString());
-                int c = a - b;
-                result.setText(c +"");
-                number_1.setText(0 + "");
-                number_2.setText(0 + "");
+                double e = number_1.getText().length() == 0 ? 0 : Integer.parseInt(number_1.getText().toString());
+                double f = number_2.getText().length() == 0 ? 0 : Integer.parseInt(number_2.getText().toString());
+                double c = e - f;
+                result.setText(c + "");
             }
         });
         MulBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double e = Double.parseDouble(number_1.getText().toString());
-                double f = Double.parseDouble(number_2.getText().toString());
+                double e = number_1.getText().length() == 0 ? 0 : Double.parseDouble(number_1.getText().toString());
+                double f = number_2.getText().length() == 0 ? 0 : Double.parseDouble(number_2.getText().toString());
                 double c = e * f;
                 result.setText(c + "");
-                number_1.setText(0 + "");
-                number_2.setText(0 + "");
+
             }
         });
         DivBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double e = Double.parseDouble(number_1.getText().toString());
-                double f = Double.parseDouble(number_2.getText().toString());
-                double c = e/f;
+                double e = number_1.getText().length() == 0 ? 0 : Double.parseDouble(number_1.getText().toString());
+                double f = number_2.getText().length() == 0 ? 0 : Double.parseDouble(number_2.getText().toString());
+                double c = e / f;
                 result.setText(c + "");
-                number_1.setText(0 + "");
-                number_2.setText(0 + "");
+
             }
         });
         Button old_result = findViewById(R.id.oldanswer);
@@ -89,8 +326,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-
+clear.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        number_1.setText("");
+        number_2.setText("");
+        result.setText("");
+        resets = 0;
+        caculated = 0;
+        caculated_1 = 0;
+        caculated_mini.setText("");
     }
-
+});
+    }
 }
 

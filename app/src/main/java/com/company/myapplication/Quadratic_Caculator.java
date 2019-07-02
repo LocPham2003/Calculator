@@ -29,9 +29,9 @@ public class Quadratic_Caculator extends AppCompatActivity {
                 result_02.setText("");
                 result_here.setText("");
                 result_string.setText("");
-                Double a = Double.parseDouble(sig_a.getText().toString());
-                Double b = Double.parseDouble(sig_b.getText().toString());
-                Double c = Double.parseDouble(sig_c.getText().toString());
+                Double a = sig_a.getText().length() == 0 ? 0 : Double.parseDouble(sig_a.getText().toString());
+                Double b = sig_b.getText().length() == 0 ? 0 : Double.parseDouble(sig_b.getText().toString());
+                Double c = sig_c.getText().length() == 0 ? 0 : Double.parseDouble(sig_c.getText().toString());
                 double ket_qua_1, ket_qua_2;
                 double delta = (b*b) - (4 * a * c);
                 if(delta > 0){
