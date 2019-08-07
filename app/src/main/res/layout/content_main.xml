@@ -126,22 +126,21 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="143dp"
-        android:layout_height="52dp"
+        android:layout_width="186dp"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="RESULT"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <Button
         android:id="@+id/oldanswer"
@@ -230,10 +229,10 @@
         android:text="Equation Caculator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintVertical_bias="0.749" />
 
     <Button
         android:id="@+id/Sine"
@@ -302,13 +301,13 @@
         android:text="SWITCH"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="0.749" />
 
     <TextView
-        android:id="@+id/caculated"
+        android:id="@+id/current_caculation"
         android:layout_width="286dp"
         android:layout_height="58dp"
         android:layout_marginStart="8dp"
@@ -342,7 +341,7 @@
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
+        app:layout_constraintVertical_bias="0.792" />
 
     <Button
         android:id="@+id/acos"

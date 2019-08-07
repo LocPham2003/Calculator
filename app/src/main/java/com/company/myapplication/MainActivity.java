@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView caculated_mini = (TextView) findViewById(R.id.caculated);
+        final TextView caculated_mini = (TextView) findViewById(R.id.current_caculation);
         final EditText number_1 = (EditText) findViewById(R.id.num_1);
         final EditText number_2 = (EditText) findViewById(R.id.num_2);
         final TextView result = (TextView) findViewById(R.id.result);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                         final Double e = Double.parseDouble(number_1.getText().toString());
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated_1 == 0) {
                         final Double f = Double.parseDouble(number_2.getText().toString());
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public final void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                             final Double e = Double.parseDouble(number_1.getText().toString());
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if(caculated_1 == 0){
                             final Double f = Double.parseDouble(number_2.getText().toString());
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                             final Double e = Double.parseDouble(number_1.getText().toString());
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if(caculated_1 == 0){
                             final Double f = Double.parseDouble(number_2.getText().toString());
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                             final Double e = Double.parseDouble(number_1.getText().toString());
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if(caculated_1 == 0){
                             final Double f = Double.parseDouble(number_2.getText().toString());
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                             final Double e = Double.parseDouble(number_1.getText().toString());
@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if(caculated_1 == 0){
                             final Double f = Double.parseDouble(number_2.getText().toString());
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (number_1.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                     if (caculated == 0) {
                             final Double e = Double.parseDouble(number_1.getText().toString());
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (number_2.getText().length() == 0) {
-                    result.setText(0 + "");
+                    result.setText("                      " + 0);
                 } else {
                         if(caculated_1 == 0){
                             final Double f = Double.parseDouble(number_2.getText().toString());
@@ -266,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
                     }
             }
         });
+        //Mot chu so la 18 spaces
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -335,7 +336,7 @@ clear.setOnClickListener(new View.OnClickListener() {
         resets = 0;
         caculated = 0;
         caculated_1 = 0;
-        caculated_mini.setText("");
+        caculated_mini.setText("Trigonometry of Number 1");
     }
 });
     }
