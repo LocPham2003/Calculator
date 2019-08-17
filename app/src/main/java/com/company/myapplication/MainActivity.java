@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.lang.Math;
+import android.view.MotionEvent;
 
 public class MainActivity extends AppCompatActivity {
-    int caculated = 0;
-    int caculated_1 = 0;
-    int resets = 0;
+    int caculated,resets,caculated_1 =  0;
+    float x1,y1,x2,y2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -319,14 +319,7 @@ public class MainActivity extends AppCompatActivity {
                 number_2.setText(result.getText());
             }
         });
-        Button change = findViewById(R.id.equation);
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), Quadratic_Caculator.class);
-                startActivity(startIntent);
-            }
-        });
+
 clear.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -340,5 +333,28 @@ clear.setOnClickListener(new View.OnClickListener() {
     }
 });
     }
+    public boolean onTouchEvent(MotionEvent touchEvent){
+        switch (touchEvent.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x1 = touchEvent.getX();
+                y1 = touchEvent.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = touchEvent.getX();
+                y2 = touchEvent.getY();
+                if (x1 < x2) { //swipe left
+                    Intent i = new Intent(MainActivity.this, Quadratic_Caculator.class);
+                    startActivity(i);
+                } else if (x1 > x2) { //swipe right
+                    Intent i = new Intent(MainActivity.this, Quadratic_Caculator.class);
+                    startActivity(i);
+                }
+                break;
+        }
+        return false;
+    }
 }
+
+
+
 
