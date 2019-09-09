@@ -136,6 +136,7 @@
         android:layout_marginBottom="8dp"
         android:inputType="numberSigned|numberDecimal"
         android:textSize="24sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
