@@ -50,7 +50,16 @@ float x1,x2,y1,y2;
                 }
             }
         });
+        Button linear_change = (Button) findViewById(R.id.linear);
+        linear_change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Quadratic_Caculator.this, Linear_Equation.class);
+                startActivity(i);
+            }
+        });
     }
+
     public boolean onTouchEvent(MotionEvent touchEvent){
         switch (touchEvent.getAction()){
             case MotionEvent.ACTION_DOWN:

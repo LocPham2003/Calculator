@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Linear_Equation"></activity>
         <activity android:name=".Quadratic_Caculator" />
         <activity
             android:name=".MainActivity"
