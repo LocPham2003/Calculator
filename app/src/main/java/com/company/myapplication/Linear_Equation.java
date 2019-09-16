@@ -7,9 +7,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Linear_Equation extends AppCompatActivity {
-    double input_number;
+    double C1,C2,C3,C4,R1,R2,ratio,x,y,nc_1,nc_2,nr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,10 @@ public class Linear_Equation extends AppCompatActivity {
         final EditText c4 = findViewById(R.id.c4);
         final EditText r1 = findViewById(R.id.r1);
         final EditText r2 = findViewById(R.id.r2);
-        final EditText enter = findViewById(R.id.enter);
+        final TextView rx = findViewById(R.id.result_x);
+        final TextView ry = findViewById(R.id.result_y);
+        Button clear_linear = findViewById(R.id.clear_linear);
+        Button calculate = findViewById(R.id.Calculate);
         Button go_back = (Button) findViewById(R.id.go_back);
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,20 +33,74 @@ public class Linear_Equation extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        enter.setNextFocusDownId(R.id.c2);
-        enter.setOnKeyListener(new View.OnKeyListener() {
+        calculate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i == KeyEvent.KEYCODE_ENTER) {
-                    if(c1.length() == 0) {
-                        input_number = Double.parseDouble(enter.getText().toString());
-                        c1.setText(input_number + "");
-                        enter.setText("");
+            public void onClick(View view) {
+                if(c1.length() == 0 && c2.length() == 0 && c3.length() == 0 && c4.length() == 0 && r1.length() == 0 && r2.length() == 0){
+                    c1.setText("");
+                    c2.setText("");
+                    c3.setText("");
+                    c4.setText("");
+                    r1.setText("");
+                    r2.setText("");
+
+                } else {
+
+                    //Variables input
+                    C1 = Double.parseDouble(c1.getText().toString());
+                    C2 = Double.parseDouble(c2.getText().toString());
+                    C3 = Double.parseDouble(c3.getText().toString());
+                    C4 = Double.parseDouble(c4.getText().toString());
+                    R1 = Double.parseDouble(r1.getText().toString());
+                    R2 = Double.parseDouble(r2.getText().toString());
+
+                //Begin calculation here
+                    if (c1 != c3) {
+                        if (C1 == 0) {
+                            y = R1;
+                            x = (R2 - C4 * y) / C3;
+
+                            //Set text command here
+                            rx.setText("x = " + x);
+                            ry.setText("y = " + y);
+                        }
+                        if (C2 == 0) {
+                            x = R1;
+                            y = (R2 - C3 * x) / C4;
+                        }
+                        if (C1 != 0 && C2 != 0) {
+                            ratio = C3 / C1;
+                            C2 = C2 * ratio;
+                            R1 = R1 * ratio;
+
+                            nc_2 = C4 - C2;
+                            nr = R2 - R1;
+
+                            y = nr / nc_2;
+                            x = R1 - C2 * y;
+
+                            //Set text command here
+                            rx.setText("x = " + x);
+                            ry.setText("y = " + y);
+
+
+                        }
                     }
                 }
-                return false;
             }
         });
+            clear_linear.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    c1.setText("");
+                    c2.setText("");
+                    c3.setText("");
+                    c4.setText("");
+                    r1.setText("");
+                    r2.setText("");
+                }
+            });
+    }
     }
 
-}
+

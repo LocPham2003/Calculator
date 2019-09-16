@@ -8,6 +8,9 @@
 
     <EditText
         android:id="@+id/r1"
+        android:imeOptions="actionNext"
+        android:gravity="center"
+        android:nextFocusForward="@+id/c3"
         android:layout_width="53dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -23,6 +26,7 @@
         android:id="@+id/r2"
         android:layout_width="53dp"
         android:layout_height="48dp"
+        android:gravity="center"
         android:ems="10"
         android:inputType="numberSigned|number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +38,9 @@
 
     <EditText
         android:id="@+id/c3"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/c4"
+        android:gravity="center"
         android:layout_width="53dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -45,23 +52,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.142" />
 
-    <EditText
-        android:id="@+id/c2"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="168dp"
-        android:layout_marginLeft="168dp"
-        android:ems="10"
-        android:inputType="numberSigned|number|numberDecimal"
+
+    <Button
+        android:id="@+id/Calculate"
+        android:layout_width="144dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.843" />
+
+    <Button
+        android:id="@+id/clear_linear"
+        android:layout_width="144dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843" />
 
     <EditText
         android:id="@+id/c4"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/r2"
         android:layout_width="53dp"
         android:layout_height="48dp"
+        android:gravity="center"
         android:ems="10"
         android:inputType="numberSigned|number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,10 +105,30 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.976" />
+
+    <EditText
+        android:id="@+id/c2"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:nextFocusForward="@+id/r1"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
+
 
     <EditText
         android:id="@+id/c1"
+        android:imeOptions="actionNext"
+        android:gravity="center"
+        android:nextFocusForward="@+id/c2"
         android:layout_width="53dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -105,10 +149,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/cal_1"
@@ -133,10 +177,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/equal2"
@@ -175,10 +219,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <TextView
         android:id="@+id/x2"
@@ -189,7 +233,7 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
@@ -208,19 +252,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14" />
 
-    <EditText
-        android:id="@+id/enter"
-        android:layout_width="341dp"
-        android:layout_height="62dp"
-        android:ems="10"
+    <TextView
+        android:id="@+id/result_x"
+        android:layout_width="402dp"
+        android:layout_height="58dp"
         android:gravity="center"
-        android:hint="Enter a number"
-        android:inputType="number|numberDecimal|numberSigned"
+        android:hint="Result display here"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.628" />
+
+    <TextView
+        android:id="@+id/result_y"
+        android:layout_width="404dp"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
 
 </android.support.constraint.ConstraintLayout>
