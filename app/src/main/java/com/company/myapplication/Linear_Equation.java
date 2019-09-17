@@ -55,9 +55,16 @@ public class Linear_Equation extends AppCompatActivity {
                     R2 = Double.parseDouble(r2.getText().toString());
 
                 //Begin calculation here
-                    if (c1 != c3) {
+                    //Special case
+                    if(C1/C3 == C2/C4){
+                        if(R1/R2 != C1/C3){
+                            rx.setText("No solution");
+                        } else {
+                            rx.setText("Infinite solution");
+                        }
+                    } else {
                         if (C1 == 0) {
-                            y = R1;
+                            y = R1 / C2;
                             x = (R2 - C4 * y) / C3;
 
                             //Set text command here
@@ -65,25 +72,46 @@ public class Linear_Equation extends AppCompatActivity {
                             ry.setText("y = " + y);
                         }
                         if (C2 == 0) {
-                            x = R1;
+                            x = R1 / C1;
                             y = (R2 - C3 * x) / C4;
+
                         }
-                        if (C1 != 0 && C2 != 0) {
+                        if (C3 == 0) {
+                            y = R2 / C4;
+                            x = (R1 - C2 * y) / C1;
+                        }
+                        if (C4 == 0) {
+                            x = R2 / C3;
+                            y = (R1 - C1 * x) / C2;
+                        }
+                        if (C3 != C1) {
                             ratio = C3 / C1;
-                            C2 = C2 * ratio;
-                            R1 = R1 * ratio;
+                            if (ratio > 0) {
+                                C2 = C2 * ratio;
+                                R1 = R1 * ratio;
 
-                            nc_2 = C4 - C2;
-                            nr = R2 - R1;
+                                nc_2 = C2 - C4;
+                                nr = R1 - R2;
 
-                            y = nr / nc_2;
-                            x = R1 - C2 * y;
+                                y = nr / nc_2;
+                                x = ((R1 / ratio) - ((C2 / ratio) * y)) / C1;
+
+                            }
+                            if (ratio < 0) {
+                                C2 = C2 * ratio;
+                                R1 = R1 * ratio;
+
+                                nc_2 = C4 + C2;
+                                nr = R1 + R2;
+
+                                y = nr / nc_2;
+                                x = ((R1 / ratio) - ((C2 / ratio) * y)) / C1;
+
+                            }
 
                             //Set text command here
                             rx.setText("x = " + x);
                             ry.setText("y = " + y);
-
-
                         }
                     }
                 }
@@ -98,6 +126,8 @@ public class Linear_Equation extends AppCompatActivity {
                     c4.setText("");
                     r1.setText("");
                     r2.setText("");
+                    rx.setText("");
+                    ry.setText("");
                 }
             });
     }
